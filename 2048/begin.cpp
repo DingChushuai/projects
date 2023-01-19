@@ -61,7 +61,7 @@ void begin()
 
 void add(int map[][4])
 {
-    srand(time());
+    srand(time(0));
     int t,r=0;
     do{
     t=rand()%16;
