@@ -1,8 +1,20 @@
 {
     "files.associations": {
-        "iostream": "cpp",
-        "ratio": "cpp",
-        "ios": "cpp",
-        "iomanip": "cpp"
-    }
+        "mmsystem.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "my.h": "c",
+        "windows.h": "c",
+        "stdlib.h": "c",
+        "math.h": "c",
+        "cmath": "c",
+        "*.tcc": "c",
+        "limits": "c",
+        "istream": "c",
+        "ostream": "c",
+        "Q.C": "cpp",
+        "time.h": "c",
+        "typeinfo": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
