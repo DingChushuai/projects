@@ -1,6 +1,8 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include"ui.cpp"
+#include"update.c"
 
 extern int map[4][4];
 extern int score;
