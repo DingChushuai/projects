@@ -1,3 +1,4 @@
+extern int score;
 int update(char direction,int map[][4])//失败返回1,合成出2048返回2
 {
     int i,j,k;
@@ -48,8 +49,17 @@ int update(char direction,int map[][4])//失败返回1,合成出2048返回2
                 }
                 if(temp[i-1][j]==temp[i][j])//相同项合并
                 {
+                    score=score+temp[i-1][j];
                     temp[i-1][j]*=2;
                     for(k=i;k<4;k++)
+                    {
+                        temp[k][j]=temp[k+1][j];
+                    }
+                    temp[4][j]=0;
+                }
+                if(temp[i-1][j]==0)//移动
+                {
+                    for(k=i-1;k<4;k++)
                     {
                         temp[k][j]=temp[k+1][j];
                     }
@@ -74,8 +84,17 @@ int update(char direction,int map[][4])//失败返回1,合成出2048返回2
                 }
                 if (temp[i][j-1] == temp[i][j]) // 相同项合并
                 {
+                    score=score+temp[i][j-1];
                     temp[i][j-1] *= 2;
                     for (k = j; k < 4; k++)
+                    {
+                        temp[i][k] = temp[i][k+1];
+                    }
+                    temp[i][4] = 0;
+                }
+                if (temp[i][j-1] == 0) // 移动
+                {
+                    for (k = j - 1; k < 4; k++)
                     {
                         temp[i][k] = temp[i][k+1];
                     }
@@ -100,13 +119,67 @@ int update(char direction,int map[][4])//失败返回1,合成出2048返回2
                 }
                 if(temp[i][j]==temp[i-1][j])
                 {
-                    
+                    score=score+temp[i][j];
+                    temp[i][j]*=2;
+                    for(k=i-1;k>1;k--)
+                    {
+                        temp[k][j]=temp[k-1][j];
+                    }
+                    temp[1][j]=0;
+                }
+                if(temp[i][j]==0)
+                {
+                    for(k=i;k>1;k--)
+                    {
+                        temp[k][j]=temp[k-1][j];
+                    }
+                    temp[1][j]=0;
                 }
             }
         }
     }
     else if(direction=='d')
     {
-
+        for (i = 1; i < 5; i++)
+        {
+            for(j=5;j>1;j--)
+            {
+                if(temp[i][j]==0)
+                {
+                    for(k=j;k>1;k--)
+                    {
+                        temp[i][k]=temp[i][k-1];
+                    }
+                    temp[i][1]=0;
+                }
+                if(temp[i][j]==temp[i][j-1])
+                {
+                    score=score+temp[i][j];
+                    temp[i][j]*=2;
+                    for(k=j-1;k>1;k--)
+                    {
+                        temp[i][k]=temp[i][k-1];
+                    }
+                    temp[i][1]=0;
+                }
+                if(temp[i][j]==0)
+                {
+                    for(k=j;k>1;k--)
+                    {
+                        temp[i][k]=temp[i][k-1];
+                    }
+                    temp[i][1]=0;
+                }
+            }
+        }
     }
+    for(i=1;i<=4;i++)
+    {
+        for(j=1;j<=4;j++)
+        {
+            map[i-1][j-1]=temp[i][j];
+            if(map[i-1][j-1]==2048) return 2;
+        }
+    }
+    return 0;
 }
