@@ -65,7 +65,7 @@ void add(int map[][4])
     int t,r=0;
     do{
     t=rand()%16;
-    if (map[0][t]!=0) 
+    if (map[0][t]==0) 
     {
         if(t==0||t==1) map[0][t]=4;
         else map[0][t]=2;
