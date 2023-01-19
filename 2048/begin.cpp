@@ -1,6 +1,7 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include<time.h>
 #include"ui.cpp"
 #include"update.c"
 
@@ -60,5 +61,15 @@ void begin()
 
 void add(int map[][4])
 {
-
+    srand(time());
+    int t,r=0;
+    do{
+    t=rand()%16;
+    if (map[0][t]!=0) 
+    {
+        if(t==0||t==1) map[0][t]=4;
+        else map[0][t]=2;
+        r=1;
+    }
+    }while(r!=1);
 }
