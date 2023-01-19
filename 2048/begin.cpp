@@ -37,7 +37,7 @@ void begin()
             system("cls");
             printf("游戏成功!\n");
         }
-        if (ifend)
+        if (ifend==1||ifend==2)
         {
             printf("您的最终分数是:%d\n",score);
             char re;
