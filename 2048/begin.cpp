@@ -14,9 +14,11 @@ void show(int map[][4]);
 
 void begin()
 {
+    printf("1");
     add(map);
     add(map);
     score=0;
+    
     while (1)
     {
         int right=0,ifend=0;
@@ -65,7 +67,8 @@ void add(int map[][4])
     int t,r=0;
     do{
     t=rand()%16;
-    if (map[0][t]!=0) 
+    printf("%d\n",t);
+    if (map[0][t]==0) 
     {
         if(t==0||t==1) map[0][t]=4;
         else map[0][t]=2;

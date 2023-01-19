@@ -183,5 +183,6 @@ int update(char direction,int map[][4])//失败返回1,合成出2048返回2
             if(map[i-1][j-1]==2048) return 2;
         }
     }
+    add(map);
     return 0;
 }
