@@ -1,6 +1,9 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include<time.h>
+#include"ui.cpp"
+#include"update.c"
 
 extern int map[4][4];
 extern int score;
@@ -35,7 +38,7 @@ void begin()
             system("cls");
             printf("游戏成功!\n");
         }
-        if (ifend)
+        if (ifend==1||ifend==2)
         {
             printf("您的最终分数是:%d\n",score);
             char re;
@@ -54,4 +57,19 @@ void begin()
         }
     }
     
+}
+
+void add(int map[][4])
+{
+    srand(time(0));
+    int t,r=0;
+    do{
+    t=rand()%16;
+    if (map[0][t]!=0) 
+    {
+        if(t==0||t==1) map[0][t]=4;
+        else map[0][t]=2;
+        r=1;
+    }
+    }while(r!=1);
 }
