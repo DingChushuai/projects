@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 extern int score;
-=======
 void add(int map[][4]);
 
->>>>>>> a571dc3e90919ae2cd0c62226b894d382d63e00c
 int update(char direction,int map[][4])//失败返回1,合成出2048返回2
 {
     int i,j,k;
