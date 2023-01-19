@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "begin.cpp"
 
 int map[4][4] = {0};
 int score = 0;

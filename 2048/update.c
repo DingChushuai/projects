@@ -1,3 +1,5 @@
+void add(int map[][4]);
+
 int update(char direction,int map[][4])//失败返回1,合成出2048返回2
 {
     int i,j,k;
