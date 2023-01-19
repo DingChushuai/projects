@@ -11,6 +11,5 @@ void show(int map[][4]);                  // 分数显示在第一行,界面方�
 
 int main()
 {
-    while (1)
-        begin();
+    while (1) begin();       
 }
