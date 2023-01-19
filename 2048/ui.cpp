@@ -5,7 +5,7 @@ using namespace std;
 extern int map[4][4];
 extern int score;
 
-void show(int *map[])
+void show(int map[][4])
 {
     cout<<"您当前的分数为"<<score<<"分"<<endl;
     for(int i=0;i<4;i++){
