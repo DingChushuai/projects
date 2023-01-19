@@ -3,9 +3,12 @@
 #include<stdio.h>
 
 extern int map[4][4];
-extern score;
+extern int score;
 
-void add();
+void add(int map[][4]);
+int update(char direction,int map[][4]);
+void show(int map[][4]);
+
 void begin()
 {
     add(map);
@@ -25,12 +28,12 @@ void begin()
         if (ifend==1) 
         {
             system("cls");
-            printf("游戏失败!\n")
+            printf("游戏失败!\n");
         }
         if (ifend==2) 
         {
             system("cls");
-            printf("游戏成功!\n")
+            printf("游戏成功!\n");
         }
         if (ifend)
         {
@@ -41,7 +44,7 @@ void begin()
             if(re=='y')
             {
                 score=0;
-                for(i=0;i<16;i++) map[0][i]=0;
+                for(int i=0;i<16;i++) map[0][i]=0;
                 continue;
             }
             else
