@@ -67,10 +67,6 @@ void add(int map[][4])
     int t,r=0;
     do{
     t=rand()%16;
-<<<<<<< HEAD
-    printf("%d\n",t);
-=======
->>>>>>> 0453aa86413cdf58eba61b5726a7af95aa591c49
     if (map[0][t]==0) 
     {
         if(t==0||t==1) map[0][t]=4;
