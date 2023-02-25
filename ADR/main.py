@@ -6,7 +6,7 @@ import pygame
 pygame.init()
 
 # 设置主屏窗口
-screen = pygame.display.set_mode((400,400))
+screen = pygame.display.set_mode((500,500))
 
 # 设置窗口的标题，即游戏名称
 pygame.display.set_caption('hello world')
